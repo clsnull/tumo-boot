@@ -1,0 +1,16 @@
+${AnsiColor.BLUE}    ___       ___       ___       ___            ___       ___       ___       ___
+${AnsiColor.BLUE}   /\  \     /\__\     /\__\     /\  \          /\  \     /\  \     /\  \     /\  \
+${AnsiColor.BLUE}   \:\  \   /:/ _/_   /::L_L_   /::\  \        /::\  \   /::\  \   /::\  \    \:\  \
+${AnsiColor.BLUE}   /::\__\ /:/_/\__\ /:/L:\__\ /:/\:\__\      /::\:\__\ /:/\:\__\ /:/\:\__\   /::\__\
+${AnsiColor.BLUE}  /:/\/__/ \:\/:/  / \/_/:/  / \:\/:/  /      \:\::/  / \:\/:/  / \:\/:/  /  /:/\/__/
+${AnsiColor.BLUE}  \/__/     \::/  /    /:/  /   \::/  /        \::/  /   \::/  /   \::/  /   \/__/
+${AnsiColor.BLUE}             \/__/     \/__/     \/__/          \/__/     \/__/     \/__/
+
+${AnsiColor.BLUE} ${spring.application.name} :: ${AnsiColor.CYAN} Running SpringBoot ${spring-boot.version} ${AnsiColor.RED} :: Port: ${server.port} :: ${AnsiColor.WHITE}
+
+   开发文档：http://docs.boot.tycoding.cn/
+   开源地址：https://github.com/Tumo-Team/tumo-boot
+   博客: http://tycoding.cn
+   Github: https://github.com/tycoding
+   QQ交流群: 866685601
+

@@ -1,0 +1,49 @@
+version: "3.5"
+
+services:
+  tumo-boot-mysql:
+    image: tumo-boot-mysql
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    container_name: tumo-boot-mysql
+    ports:
+      - 3306:3306
+
+  tumo-boot-redis:
+    image: redis:6.0
+    restart: always
+    hostname: tumo-boot-redis
+    container_name: tumo-boot-redis
+    privileged: true
+    command: "redis-server --appendonly yes"
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6379:6379
+    networks:
+      - tumo_boot_net
+
+  tumo-boot:
+    image: tumo-boot
+    build:
+      context: ./
+    restart: always
+    container_name: tumo-boot
+    hostname: tumo-boot
+    ports:
+      - 8090:8090
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      tumo_boot_net:
+        ipv4_address: 172.30.0.80
+
+networks:
+  tumo_boot_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

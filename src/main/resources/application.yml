@@ -1,0 +1,84 @@
+server:
+  port: 8090
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  # 应用名称
+  application:
+    name: tumo-boot
+  # 默认执行的配置文件
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+
+  # 数据库配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Cache设置
+  cache:
+    type: redis
+
+  # 文件上传相关设置
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+  #activiti 相关配置
+  activiti:
+    db-history-used: true
+
+# MybatisPlus配置
+mybatis-plus:
+  type-aliases-package: cn.tycoding.boot.modules.**.entity
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+
+# Knife4j配置
+knife4j:
+  enable: true
+
+# 日志配置
+logging:
+  level:
+    springfox: error
+    cn.tycoding.boot.modules: debug
+
+# 系统自定义配置
+tumo-boot:
+  # 权限配置
+  auth:
+    # 是否开启演示环境
+    is-demo-env: true
+    # 默认忽略拦截的URL
+    skip-url:
+      - /favicon.ico
+      - /tumo-boot/oss/put
+      - /tumo-boot/auth/logout
+      - /tumo-boot/auth/captcha
+  # 日志配置
+  log:
+    # 是否开始日志打印
+    enable: false
+  # Mybatis 配置
+  mybatis:
+    # 是否开启SQL打印
+    enable: false
+  # Swagger配置
+  swagger:
+    base-package: cn.tycoding.boot
+    authorization-scope-list:
+      - scope: 'app'
+        description: 'default scope'
+    title: Tumo Boot 项目API接口文档
+    description: 项目开源地址：https://github.com/Tumo-Team/Tumo-Boot
+    author: TyCoding
+    url: http://tycoding.cn
+    email: tycoding@sina.com
+    version: v1.0
