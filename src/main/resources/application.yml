@@ -30,6 +30,8 @@ spring:
   #activiti 相关配置
   activiti:
     db-history-used: true
+    history-level: full
+
 
 # MybatisPlus配置
 mybatis-plus:
